@@ -1,4 +1,5 @@
 //merge them one by one, priority queue could be better solution
+//and when I change it ot divide and conquer, it become slower, but technically, it should be O(kn)-> O(nlogk)
 
 /**
  * Definition for singly-linked list.
