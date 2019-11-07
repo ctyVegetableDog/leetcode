@@ -34,3 +34,19 @@ class Solution:
                 v[ord(c) - ord('a')] += 1
             res[tuple(v)].append(s)
         return res.values()
+
+//C++ use sort (don't know why it's faster than hash_map version)
+class Solution {
+public:
+    vector<vector<string>> groupAnagrams(vector<string>& strs) {
+        vector<vector<string> > res;
+        unordered_map<string, vector<string> > hm;
+        for(string s: strs) {
+            string after_sort = s;
+            sort(after_sort.begin(), after_sort.end());
+            hm[after_sort].push_back(s);
+        }
+        for (auto& v : hm) res.push_back(vector<string>(v.second.begin(), v.second.end()));
+        return res;
+    }
+};
