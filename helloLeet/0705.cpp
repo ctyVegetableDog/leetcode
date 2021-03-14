@@ -1,4 +1,4 @@
-// Hash map
+// Hash table
 class MyHashSet {
     private:
         vector<list<int>> hash_vector;
