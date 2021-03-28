@@ -44,6 +44,41 @@ public:
     }
 };
 
+// a better solution
+
+class BSTIterator {
+private:
+    TreeNode* cur;
+    vector<TreeNode*> stk;
+public:
+    BSTIterator(TreeNode* root):cur(root) {
+
+    }
+    
+    int next() {
+        while (cur) {
+            stk.push_back(cur);
+            cur = cur->left;
+        }
+        cur = stk.back();
+        stk.pop_back();
+        int res = cur->val;
+        cur = cur->right;
+        return res;
+    }
+    
+    bool hasNext() {
+        return (!stk.empty() || cur);
+    }
+};
+
+/**
+ * Your BSTIterator object will be instantiated and called as such:
+ * BSTIterator* obj = new BSTIterator(root);
+ * int param_1 = obj->next();
+ * bool param_2 = obj->hasNext();
+ */
+
 /**
  * Your BSTIterator object will be instantiated and called as such:
  * BSTIterator* obj = new BSTIterator(root);
