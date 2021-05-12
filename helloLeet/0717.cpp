@@ -1,4 +1,4 @@
-//1-bit and 2-bitt Characters
+//1-bit and 2-bit Characters
 
 class Solution {
 public:
