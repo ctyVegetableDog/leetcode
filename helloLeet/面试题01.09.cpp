@@ -10,10 +10,10 @@ public:
     bool isFlipedString(string s1, string s2) {
         int len1 = s1.size(), len2 = s2.size();
         if (len1 != len2) return false;
-        // 构建next数组，思路是模式串自己和自己匹配
+        // 构建next数组，思路是模式串自己和自己匹配，另外定义只有一个字符的串，没有前后缀
          vector<int> next(len2, -1); 
          int i = -1, j = 0;
-         while (j < len2 - 1) {
+         while (j < len2 - 1) { // 减1的是因为先加再赋值
              if (i == -1 || s2[i] == s2[j]) { // 字符匹配成功
                 ++i;
                 ++j;
